@@ -32,7 +32,6 @@ class CompanyStoreRequest extends FormRequest
             'broker' => ['nullable', 'max:255', 'string'],
             'policy_type' => ['required', 'max:255', 'string'],
             'policy_expiry' => ['required', 'date', 'date'],
-            'policy_value' => ['required', 'numeric'],
             'policy_notes' => ['nullable', 'max:255', 'string'],            
         ];
     }

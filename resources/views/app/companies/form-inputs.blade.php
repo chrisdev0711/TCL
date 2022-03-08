@@ -109,26 +109,6 @@
                                             
                                         ></input>
                                     </div>
-                                    <div class="mt-6">
-                                        <label for="policy_value" class="block text-sm font-medium text-gray-700">Replacement Value</label>
-                                        <div class="relative mt-1 rounded-md shadow-sm">
-                                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                                <span class="text-gray-500 sm:text-sm">
-                                                £
-                                                </span>
-                                            </div>
-                                            <input
-                                                type="text"
-                                                name="policy_value"
-                                                value="{{ old('policy_value', ($editing ? $company->policy_value : '')) }}"
-                                                maxlength="255"
-                                                placeholder=""
-                                                required
-                                                class="block w-full py-2 pr-12 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm" placeholder="0000.00" aria-describedby="price-currency"
-                                                
-                                            ></input>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 <div class="col-span-6 sm:col-span-3">

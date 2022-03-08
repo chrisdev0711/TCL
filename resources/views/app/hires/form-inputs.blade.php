@@ -352,6 +352,7 @@
                                 <label for="start_date" class="block text-sm font-medium text-gray-700">Hire Start Date</label>
                                 <input
                                     name="start_date"
+                                    id="start_date"
                                     type="date"
                                     max="255"
                                     class="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm form-date focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -922,7 +923,6 @@
                                 placeholder=""
                                 required
                                 class="block w-full py-2 pr-12 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm" placeholder="0000.00" aria-describedby="price-currency"
-                                readonly
                             ></input>
                         </div>
                     </div>

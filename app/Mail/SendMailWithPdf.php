@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendCustomerMail extends Mailable
+class SendMailWithPdf extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -32,7 +32,7 @@ class SendCustomerMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Mail from TCL Tanker Track')->text('emails.send_customer_plain')
-            ->attachData($this->pdf,'customer.pdf');
+        return $this->subject('Mail from TCL Tanker Track')->text('emails.send_customer_contract_plain')
+            ->attach('customer.pdf');
     }
 }

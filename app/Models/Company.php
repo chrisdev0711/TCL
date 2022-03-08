@@ -21,7 +21,6 @@ class Company extends Model
         'broker',
         'policy_type',
         'policy_expiry',
-        'policy_value',
         'policy_notes'
     ];
     protected $table = 'companies';

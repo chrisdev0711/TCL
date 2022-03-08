@@ -33,7 +33,6 @@ $(document).ready(function () {
                 $("#broker").val(sel_company['broker']);
                 $("#policy_type").val(sel_company['policy_type']);
                 $("#policy_expiry").val(sel_company['policy_expiry']);
-                $("#policy_value").val(sel_company['policy_value']);
                 $("#policy_notes").val(sel_company['policy_notes']);
             }
             else {
@@ -156,17 +155,17 @@ $(document).ready(function () {
         $('#document_path').val(document_path);
         toastr.success("Document Removed Successfully!", 'Success!', { timeOut: 5000 });
     });
-    // $("#policy_expiry").on('change', function () {
-    //     var expiry = $("#policy_expiry").val();
-    //     expiry = new Date(expiry);
-    //     var message = '';
-    //     var today = new Date();
-    //     if (expiry < today) {
-    //         mesage = 'Policy is expired'
-    //     }
-    //     document.querySelector('#policy_expiry').setCustomValidity(message);
-    //     console.log(message);
-    // });
+    $("#start_date").on('change', function () {
+        var expiry = $("#policy_expiry").val();
+        var startDate = $('#start_date').val();
+        expiry = new Date(expiry);
+        startDate = new Date(startDate);
+
+        if (expiry <= startDate) {
+            toastr.error('Policy has already expired!');
+            $('#start_date').val('');
+        }
+    });
     $("#document").on('change', function () {
         // readURL(this);
         var fd = new FormData();

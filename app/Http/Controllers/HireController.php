@@ -178,18 +178,17 @@ class HireController extends Controller
         $tankers = Tanker::where('usage', '=', false)->where('archive', '=', false)->select(['id','fleet_num'])->get();
         $view = view('app.hires.form-inputs', compact('hire','contacts', 'tankers'));
         $html = $view->render();
-        $pdf = Browsershot::html($html)->savePdf('example93.pdf');
+        $pdf = Browsershot::html($html)->savePdf('customer.pdf');
         
         $email_address = $hire->contact->email;
-        $attached_docs_url = explode(";", $hire->attached_doc);
+        //$attached_docs_url = explode(";", $hire->attached_doc);
 
         $details = [
             'hirer_name' => $hire->hirer_name,
             'link_url' => route('contract_link', ['uuid' => $hire->uuid]),
-            'attached_docs_url' => $attached_docs_url,
             'isUpdatedDocs' => "false",
         ];
-        \Mail::to($email_address)->send(new \App\Mail\SendCustomerMail($details));
+        \Mail::to($email_address)->send(new \App\Mail\SendMailWithPdf($details, $pdf));
         return redirect()
             ->route('hires.index', $hire)
             ->withSuccess(__('crud.common.email'));

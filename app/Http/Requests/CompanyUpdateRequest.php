@@ -32,7 +32,6 @@ class CompanyUpdateRequest extends FormRequest
             'broker' => ['nullable', 'max:255', 'string'],
             'policy_type' => ['nullable', 'max:255', 'string'],
             'policy_expiry' => ['nullable', 'date', 'date'],
-            'policy_value' => ['nullable', 'numeric'],
             'policy_notes' => ['nullable', 'max:255', 'string'],
             
         ];
