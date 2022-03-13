@@ -155,17 +155,17 @@ $(document).ready(function () {
         $('#document_path').val(document_path);
         toastr.success("Document Removed Successfully!", 'Success!', { timeOut: 5000 });
     });
-    $("#start_date").on('change', function () {
-        var expiry = $("#policy_expiry").val();
-        var startDate = $('#start_date').val();
-        expiry = new Date(expiry);
-        startDate = new Date(startDate);
+    // $("#start_date").on('change', function () {
+    //     var expiry = $("#policy_expiry").val();
+    //     var startDate = $('#start_date').val();
+    //     expiry = new Date(expiry);
+    //     startDate = new Date(startDate);
 
-        if (expiry <= startDate) {
-            toastr.error('Policy has already expired!');
-            $('#start_date').val('');
-        }
-    });
+    //     if (expiry <= startDate) {
+    //         toastr.error('Policy has already expired!');
+    //         $('#start_date').val('');
+    //     }
+    // });
     $("#document").on('change', function () {
         // readURL(this);
         var fd = new FormData();

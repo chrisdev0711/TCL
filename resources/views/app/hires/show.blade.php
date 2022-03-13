@@ -15,7 +15,7 @@
                 <h5 class="font-medium">
                     @lang('crud.hires.inputs.company_id')
                 </h5>
-                <span>{{ optional($hire->company)->company ?? '-' }}</span>
+                <span>{{ optional($hire->contact->company)->company ?? '-' }}</span>
             </div>
             <div class="mb-4">
                 <h5 class="font-medium">

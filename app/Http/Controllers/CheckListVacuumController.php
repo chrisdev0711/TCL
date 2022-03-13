@@ -74,7 +74,7 @@ class CheckListVacuumController extends Controller
             'hirer_name' => $checkList->hirer_name,
             'link_url' => route('checklist_vacuum_link', ['uuid' => $checkList->uuid])
         ];
-        $email_address = $checkList->hire->company->email;
+        $email_address = $checkList->hire->contact->email;
         \Mail::to($email_address)->send(new \App\Mail\SendCheckListNrMail($details));
     }
 

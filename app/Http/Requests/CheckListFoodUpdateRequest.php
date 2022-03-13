@@ -39,7 +39,8 @@ class CheckListFoodUpdateRequest extends FormRequest
             'compartment_internal' => ['nullable'],
             'landingLegs_operation' => ['nullable'], 
             'dischargePump_operation' => ['nullable'], 
-
+            'vehicle_check_note'  => ['nullable'],
+            
             'note_1' => ['nullable', 'max:255', 'string'],
             'ns_1' => ['nullable', 'max:255'],
             'os_1' => ['nullable', 'max:255'],

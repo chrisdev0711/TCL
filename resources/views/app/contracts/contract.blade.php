@@ -37,7 +37,6 @@
     }
 </script>
 <script>
-    let companies = {!! json_encode($company_list) !!}
     let tankers = {!! json_encode($tanker_list) !!}
 
     var already_signed = "{{ $signed ? true : false }}"

@@ -73,7 +73,7 @@ class TCLEmailController extends Controller
             'hirer_name' => $checklist->hire->hirer_name,
             'link_url' => route('checklist_nr_link', ['uuid' => $checklist_id])
         ];
-        $email_address = $checklist->hire->company->email;
+        $email_address = $checklist->hire->contact->email;
 
         // \Mail::to('italexx.ua@gmail.com')->send(new \App\Mail\SendCheckListNrMail($details));
         \Mail::to($email_address)->send(new \App\Mail\SendCheckListNrMail($details));
@@ -87,7 +87,7 @@ class TCLEmailController extends Controller
             'hirer_name' => $checklist->hire->hirer_name,
             'link_url' => route('checklist_rigid_link', ['uuid' => $checklist_id])
         ];
-        $email_address = $checklist->hire->company->email;
+        $email_address = $checklist->hire->contact->email;
 
         // \Mail::to('italexx.ua@gmail.com')->send(new \App\Mail\SendCheckListRigidMail($details));
         \Mail::to($email_address)->send(new \App\Mail\SendCheckListRigidMail($details));

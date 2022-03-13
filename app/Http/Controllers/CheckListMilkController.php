@@ -75,7 +75,7 @@ class CheckListMilkController extends Controller
             'hirer_name' => $checkList->hirer_name,
             'link_url' => route('checklist_milk_link', ['uuid' => $checkList->uuid])
         ];
-        $email_address = $checkList->hire->company->email;
+        $email_address = $checkList->hire->contact->email;
         \Mail::to($email_address)->send(new \App\Mail\SendCheckListNrMail($details));
     }
 
@@ -262,7 +262,6 @@ class CheckListMilkController extends Controller
             return redirect()->route('hires.index')->withSuccess(__('crud.common.created'));
         }
         $checkListMilk->update($validated);   
-        
         $tanker = $hire->tanker;
         $tanker->ext_splat_left = $validated['ext_splat_left'];
         $tanker->ext_splat_front = $validated['ext_splat_front'];

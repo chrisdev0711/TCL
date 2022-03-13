@@ -355,6 +355,7 @@
                                     id="start_date"
                                     type="date"
                                     max="255"
+                                    oninput="check(this)"
                                     class="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm form-date focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                     value="{{ old('start_date', ($editing ? optional($hire->start_date)->format('Y-m-d') : '')) }}"
                                     required
@@ -886,7 +887,6 @@
                             name="policy_expiry"
                             id="policy_expiry"
                             type="date"
-                            oninput="check(this)"
                             value="{{ old('policy_expiry', ($editing ? optional($hire->policy_expiry)->format('Y-m-d') : '')) }}"
                             max="255"
                             class="block w-full py-2 mt-1 border-gray-300 rounded-md shadow-sm form-date focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
@@ -1090,12 +1090,12 @@
         })
     }
     function check(input) {
-        var expiry = input.value;
-
+        var start = input.value;
+        var expiry = $("#policy_expiry").val();
         expiry = new Date(expiry);
-        var today = new Date();
-        if (expiry < today) {
-            input.setCustomValidity('WARNING: Insurance has expired');
+        start = new Date(start);
+        if (expiry <= start) {
+            input.setCustomValidity('WARNING: Policy has already expired!');
         } else {
             input.setCustomValidity('');
         }   

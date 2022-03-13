@@ -45,7 +45,7 @@
                         <x-inputs.text
                             name="contact"
                             id="contact"
-                            value="{{ $hire->company->contact }}"
+                            value="{{ $hire->contact->contact }}"
                             maxlength="255"
                             class="block w-full py-2 mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:bg-gray-200"
                             disabled
@@ -56,7 +56,7 @@
                         <x-inputs.text
                             name="company_id"
                             id="company_id"
-                            value="{{ $hire->company->company }}"
+                            value="{{ $hire->contact->company->company }}"
                             class="block w-full py-2 mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:bg-gray-200"
                             disabled
                         ></x-inputs.text>
@@ -66,7 +66,7 @@
                         <x-inputs.text
                             name="email"
                             id="email"
-                            value="{{ $hire->company->email }}"
+                            value="{{ $hire->contact->email }}"
                             maxlength="255"
                             class="block w-full py-2 mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:bg-gray-200"
                             disabled
@@ -92,7 +92,7 @@
                         <x-inputs.text
                             name="phone"
                             id="phone"
-                            value="{{ $hire->company->phone }}"
+                            value="{{ $hire->contact->phone }}"
                             maxlength="255"
                             class="block w-full py-2 mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:bg-gray-200"
                             disabled
@@ -103,7 +103,7 @@
                         <x-inputs.text
                             name="mobile"
                             id="mobile"
-                            value="{{ $hire->company->mobile }}"
+                            value="{{ $hire->contact->mobile }}"
                             maxlength="255"
                             class="block w-full py-2 mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:bg-gray-200"
                             disabled
@@ -116,7 +116,7 @@
                         <x-inputs.text
                             name="address"
                             id="address"
-                            value="{{ $hire->company->address }}"
+                            value="{{ $hire->contact->company->address }}"
                             maxlength="255"
                             class="block w-full py-2 mt-1 bg-gray-200 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm md:bg-gray-200"
                             disabled

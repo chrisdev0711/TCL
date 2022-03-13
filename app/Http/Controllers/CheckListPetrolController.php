@@ -76,7 +76,7 @@ class CheckListPetrolController extends Controller
             'hirer_name' => $checkList->hirer_name,
             'link_url' => route('checklist_petrol_link', ['uuid' => $checkList->uuid])
         ];
-        $email_address = $checkList->hire->company->email;
+        $email_address = $checkList->hire->contact->email;
         \Mail::to($email_address)->send(new \App\Mail\SendCheckListNrMail($details));
     }
 
@@ -119,7 +119,7 @@ class CheckListPetrolController extends Controller
             $url = '/storage/uploads/cleaning_status/'.$file_name;            
             $validated['cleaning_status'] = $url;
         }
-
+        
         $checkListPetrol = CheckListPetrol::create($validated);
         $checkListPetrol->supervisor_signature = $request->supervisor_signature;
         $checkListPetrol->save();

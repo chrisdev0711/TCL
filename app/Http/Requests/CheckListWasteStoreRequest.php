@@ -39,7 +39,8 @@ class CheckListWasteStoreRequest extends FormRequest
             'valve_operation' => ['nullable'],
             'compartment_internal' => ['nullable'],
             'landingLegs_operation' => ['nullable'],  
-
+            'vehicle_check_note'  => ['nullable'],
+            
             'note_1' => ['nullable', 'max:255', 'string'],
             'ns_1' => ['nullable', 'max:255'],
             'os_1' => ['nullable', 'max:255'],

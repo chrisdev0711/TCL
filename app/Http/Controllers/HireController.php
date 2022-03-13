@@ -245,7 +245,7 @@ class HireController extends Controller
                 'isUpdatedDocs' => "true",
             ];
         
-            $email_address = $hire->company->email;
+            $email_address = $hire->contact->email;
     
             \Mail::to($email_address)->send(new \App\Mail\SendCustomerMail($details));  
         }
